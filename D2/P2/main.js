@@ -7,23 +7,24 @@ let list = data.split("\n");
 
 let h = 0;
 let v = 0;
+let aim = 0;
 
 for (let i = 0; i < list.length; i++) {
   let instruction = list[i];
   let direction = instruction[0];
-  let distance = parseInt(instruction[instruction.length - 1]);
+  let distance = parseInt(instruction[instruction.length - 1]);  
+  console.log(distance)
+
   switch (direction) {
     case "f":
       h += distance;
-      break;
-    case "b":
-      h -= distance;
+      v += distance * aim;
       break;
     case "u":
-      v -= distance;
+      aim -= distance;
       break;
     case "d":
-      v += distance;
+      aim += distance;
       break;
 
     default:
